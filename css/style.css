@@ -1,0 +1,27 @@
+@font-face{
+    font-family: "Jost-regular";
+    src: url('../fonts/Jost/Jost-Regular.ttf');
+}
+
+@font-face{
+    font-family: "Jost-bolditalic";
+    src: url('../fonts/Jost/Jost-SemiBoldItalic.ttf');
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    font-family: "Jost-regular";
+}
+
+.header{
+    margin-bottom: 10px;
+}
+
+.title {
+    font-family: 'Jost-bolditalic';
+}
+
+#messages {
+    margin: 30px;
+}
