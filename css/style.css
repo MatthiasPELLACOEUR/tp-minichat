@@ -10,18 +10,63 @@
 
 html, body {
     width: 100%;
-    height: 100%;
+    height: auto;
     font-family: "Jost-regular";
+    background-image: linear-gradient(to right top, #051937, #002668, #182f98, #4f2ec5, #8d12eb);
+    color: white;
 }
 
-.header{
-    margin-bottom: 10px;
+.navbar{
+    background-color: rgba(0,0,0,.50);
 }
 
 .title {
     font-family: 'Jost-bolditalic';
 }
 
+.list-users {
+    margin-top: 20px;
+    width: 12vw;
+}
+
+aside ul {    
+    padding: 0px;
+}
+
+aside ul li {
+    list-style-type: none;
+}
+
 #messages {
-    margin: 30px;
+   margin-top: 2%;
+   margin-bottom: 2%;
+}
+
+div.card.message.message-content {
+    margin-bottom: 1%;
+    border: 1px solid rgba(0,0,0,.50);
+    background-color: rgba(0,0,0,.50);
+}
+
+#talkBar {
+    margin-left: 15%;
+    margin-bottom: 1%;
+}
+
+#nickname {
+    outline: none!important;
+}
+
+textarea {
+    resize: none!important;
+    outline: none;
+}
+
+.input-group{
+    width: 98%;
+    justify-content: space-evenly;
+}
+
+#button {
+    height: 100%;
 }

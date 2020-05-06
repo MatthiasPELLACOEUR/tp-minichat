@@ -13,9 +13,8 @@ foreach ($users as $user) {
     $usersByNickname[$user['nickname']] = $user;
 }
 
-// echo '<pre>';
-// print_r($usersByNickname);exit;
 
+date_default_timezone_set('Europe/Paris');
 
 $nickname = htmlspecialchars($_POST['nickname']);
 $message = htmlspecialchars($_POST['message']);
@@ -50,5 +49,6 @@ if (isset($usersByNickname[$nickname])) {
 }
 
 createMessage($msgUserId, $message, $time);
+
 
 header('Location: /index.php');
