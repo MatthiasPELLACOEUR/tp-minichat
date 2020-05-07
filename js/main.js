@@ -1,4 +1,11 @@
+
+// for a better scroll
+
 $(document).ready(function(){
+
+    var scrollable = document.getElementById('container');
+    scrollable.scrollTop = scrollable.scrollHeight;
+
     (function($){
     
         $.fn.autoResize = function(options) {
@@ -10,8 +17,8 @@ $(document).ready(function(){
                 animate : true,
                 animateDuration : 100,
                 animateCallback : function(){},
-                extraSpace : 0,
-                limit: 200
+                extraSpace : 10,
+                limit: 98
             }, options);
             
             // Only textarea's auto-resize:

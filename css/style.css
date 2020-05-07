@@ -10,7 +10,7 @@
 
 html, body {
     width: 100%;
-    height: auto;
+    height: 100%;
     font-family: "Jost-regular";
     background-image: linear-gradient(to right top, #051937, #002668, #182f98, #4f2ec5, #8d12eb);
     color: white;
@@ -20,11 +20,33 @@ html, body {
     background-color: rgba(0,0,0,.50);
 }
 
+main{
+    width: 100%;
+    height: 100%;
+}
+
+
+.container {
+    height: 82%;
+    overflow: scroll;
+    overflow-x: hidden;
+    top: 56px;
+    scroll-behavior: smooth;
+}
+
+.chat {
+    margin: 0px!important;
+}
+
+
 .title {
     font-family: 'Jost-bolditalic';
 }
 
 .list-users {
+    position: absolute;
+    top: 60px;
+    right: 0px;
     margin-top: 20px;
     width: 12vw;
 }
@@ -39,7 +61,6 @@ aside ul li {
 
 #messages {
    margin-top: 2%;
-   margin-bottom: 2%;
 }
 
 div.card.message.message-content {
@@ -60,11 +81,15 @@ div.card.message.message-content {
 textarea {
     resize: none!important;
     outline: none;
+    padding: 7px;
+    padding-left: 15px;
 }
 
+
 .input-group{
-    width: 98%;
-    justify-content: space-evenly;
+    margin: 0px auto!important;    
+    width: 89%;
+    justify-content: space-between;
 }
 
 #button {

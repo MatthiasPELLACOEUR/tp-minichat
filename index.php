@@ -4,7 +4,7 @@
 include 'pdo/connection.php';
 
 
-$allMessageStatement = $database->query('SELECT messages.*, users.nickname FROM messages INNER JOIN users WHERE users.id = messages.user_id');
+$allMessageStatement = $database->query('SELECT messages.*, users.nickname FROM messages INNER JOIN users WHERE users.id = messages.user_id ORDER BY messages.created_at');
 $allMessages = $allMessageStatement->fetchAll(PDO::FETCH_ASSOC);
 
 $allUsersStatement = $database->query('SELECT * FROM users');
@@ -38,7 +38,7 @@ $allUsers = $allUsersStatement->fetchAll(PDO::FETCH_ASSOC);
         </ul>
     </aside>
     <main>
-        <div class="container col-lg-8">
+        <div class="container col-lg-8" id="container">
             <section class="row mb-5 my-5 chat">
                 <div class="col-lg-12" id="messages">
                     <div class="col-lg-12" id="messages-container">
@@ -66,7 +66,7 @@ $allUsers = $allUsersStatement->fetchAll(PDO::FETCH_ASSOC);
         <form action="pdo/send-message.php" method="post">
             <div class="input-group">
                 <input type="text" name="nickname" id="nickname" class="form-control input-group-addon col-2" placeholder="Nickname" min-length="2" required>
-                <textarea type="text" name="message" id="message" rows="1" cols="80" placeholder="Type your message here" minlength="1" required></textarea>
+                <textarea type="text" name="message" id="message" rows="1" cols="90" placeholder="Type your message here" minlength="1" required></textarea>
                 <button type="submit" id="button" class="btn btn-primary col-1">Send !</button>
             </div>
         </form>
