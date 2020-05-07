@@ -1,10 +1,23 @@
-
 // for a better scroll
+function scrollpage(){
+    var scrollable = document.getElementById('container');
+    scrollable.scrollTop = scrollable.scrollHeight;
+    setTimeout (scrollpage, 100);
+}
+
+function refreshMessage() {
+    $.get('./partials/get_message.php', function(messageHtml) {
+        document.querySelector('#messages-container').innerHTML = messageHtml;
+        setTimeout(refreshMessage, 3000);
+    })
+}
 
 $(document).ready(function(){
 
-    var scrollable = document.getElementById('container');
-    scrollable.scrollTop = scrollable.scrollHeight;
+    
+    refreshMessage();
+
+    scrollpage();
 
     (function($){
     
