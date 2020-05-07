@@ -10,7 +10,7 @@ foreach ($allMessages as $message) : ?>
     <div class="card message message-content">
         <div class="card-body">
             <p class="my-0">
-                <strong style="color:<?= $message['color'] ?>;">
+                <strong">
                     <?= $message['nickname'] ?>
                 </strong>
                 :

@@ -3,7 +3,7 @@ session_start();
 //CONNECTION DATABASE
 require 'pdo/connection.php';
 
-$allMessageStatement = $database->query('SELECT messages.*, users.nickname, users.color FROM messages INNER JOIN users WHERE users.id = messages.user_id ORDER BY messages.created_at');
+$allMessageStatement = $database->query('SELECT messages.*, users.nickname, users.color FROM messages INNER JOIN users WHERE users.id = messages.user_id ORDER BY messages.created_at LIMIT 30');
 $allMessages = $allMessageStatement->fetchAll(PDO::FETCH_ASSOC);
 
 $allUsersStatement = $database->query('SELECT * FROM users');
@@ -20,9 +20,9 @@ if (isset($_COOKIE['user_cookie'])) {
     $currentNickname = $_COOKIE['user_cookie'];
 }
 
-if (!isset($currentNickname)) {
-    $currentNickname = '';
-}
+// if (!isset($currentNickname)) {
+//     $currentNickname = '';
+// }
 
 ?>
 
@@ -59,7 +59,7 @@ if (!isset($currentNickname)) {
                             <div class="card message message-content">
                                 <div class="card-body">
                                     <p class="my-0">
-                                        <strong style="color:<?= $message['color'] ?>;">
+                                        <strong>
                                             <?= $message['nickname'] ?>
                                         </strong>
                                         :
@@ -78,13 +78,13 @@ if (!isset($currentNickname)) {
     <div id="talkBar" class="fixed-bottom col-lg-8">
         <form action="pdo/send-message.php" method="post">
             <div class="input-group">
-                <input type="text" name="nickname" id="nickname" class="form-control input-group-addon col-2" placeholder="Nickname" min-length="2" value="<?= $currentNickname ?>" required>
+                <input type="text" name="nickname" id="nickname" class="form-control input-group-addon col-2" placeholder="Nickname" min-length="2" value="<?= $currentNickname ?? '' ?>" required>
                 <textarea type="text" name="message" id="message" rows="1" cols="90" placeholder="Type your message here" minlength="1" required></textarea>
                 <button type="submit" id="button" class="btn btn-primary col-1">Send !</button>
             </div>
         </form>
     </div>
-                            <a href="/partials/post-message.php">TEST SCRIPT</a>
+                            <!-- <a href="/partials/post-message.php">TEST SCRIPT</a> -->
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>

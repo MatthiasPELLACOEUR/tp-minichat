@@ -2,9 +2,8 @@
 function scrollpage(){
     var scrollable = document.getElementById('container');
     scrollable.scrollTop = scrollable.scrollHeight;
-    setTimeout (scrollpage, 100);
+    // setTimeout (scrollpage, 100);
 }
-
 function refreshMessage() {
     $.get('./partials/get_message.php', function(messageHtml) {
         document.querySelector('#messages-container').innerHTML = messageHtml;
@@ -13,8 +12,10 @@ function refreshMessage() {
 }
 
 $(document).ready(function(){
-
     
+    
+    // $('#container').scrollTop($('$container')[0].scrollHeight);
+
     refreshMessage();
 
     scrollpage();
